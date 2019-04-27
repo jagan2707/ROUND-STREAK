@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		BF887A202273F718001AB198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A1F2273F718001AB198 /* AppDelegate.swift */; };
-		BF887A222273F718001AB198 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A212273F718001AB198 /* ViewController.swift */; };
 		BF887A252273F719001AB198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF887A232273F719001AB198 /* Main.storyboard */; };
 		BF887A272273F71B001AB198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF887A262273F71B001AB198 /* Assets.xcassets */; };
 		BF887A2A2273F71B001AB198 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF887A282273F71B001AB198 /* LaunchScreen.storyboard */; };
 		BF887A352273F71B001AB198 /* ROUND_STREAKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A342273F71B001AB198 /* ROUND_STREAKTests.swift */; };
 		BF887A402273F71B001AB198 /* ROUND_STREAKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A3F2273F71B001AB198 /* ROUND_STREAKUITests.swift */; };
+		BF887A58227401AA001AB198 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A52227401AA001AB198 /* RegisterPresenter.swift */; };
+		BF887A59227401AA001AB198 /* RegisterWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A53227401AA001AB198 /* RegisterWorker.swift */; };
+		BF887A5A227401AA001AB198 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A54227401AA001AB198 /* RegisterRouter.swift */; };
+		BF887A5B227401AA001AB198 /* RegisterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A55227401AA001AB198 /* RegisterModels.swift */; };
+		BF887A5C227401AA001AB198 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A56227401AA001AB198 /* RegisterViewController.swift */; };
+		BF887A5D227401AA001AB198 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A57227401AA001AB198 /* RegisterInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 /* Begin PBXFileReference section */
 		BF887A1C2273F718001AB198 /* ROUND-STREAK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ROUND-STREAK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF887A1F2273F718001AB198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF887A212273F718001AB198 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF887A242273F719001AB198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF887A262273F71B001AB198 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF887A292273F71B001AB198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		BF887A3B2273F71B001AB198 /* ROUND-STREAKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ROUND-STREAKUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF887A3F2273F71B001AB198 /* ROUND_STREAKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROUND_STREAKUITests.swift; sourceTree = "<group>"; };
 		BF887A412273F71B001AB198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF887A52227401AA001AB198 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		BF887A53227401AA001AB198 /* RegisterWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWorker.swift; sourceTree = "<group>"; };
+		BF887A54227401AA001AB198 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		BF887A55227401AA001AB198 /* RegisterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModels.swift; sourceTree = "<group>"; };
+		BF887A56227401AA001AB198 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		BF887A57227401AA001AB198 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +107,11 @@
 		BF887A1E2273F718001AB198 /* ROUND-STREAK */ = {
 			isa = PBXGroup;
 			children = (
-				BF887A1F2273F718001AB198 /* AppDelegate.swift */,
-				BF887A212273F718001AB198 /* ViewController.swift */,
-				BF887A232273F719001AB198 /* Main.storyboard */,
-				BF887A262273F71B001AB198 /* Assets.xcassets */,
-				BF887A282273F71B001AB198 /* LaunchScreen.storyboard */,
-				BF887A2B2273F71B001AB198 /* Info.plist */,
+				BF887A5E22740259001AB198 /* Resource */,
+				BF887A4D2274004B001AB198 /* InitialSetUP */,
+				BF887A51227400C3001AB198 /* StoryBoard */,
+				BF887A50227400B6001AB198 /* Scenes */,
+				BF887A4F22740093001AB198 /* Models */,
 			);
 			path = "ROUND-STREAK";
 			sourceTree = "<group>";
@@ -123,6 +132,52 @@
 				BF887A412273F71B001AB198 /* Info.plist */,
 			);
 			path = "ROUND-STREAKUITests";
+			sourceTree = "<group>";
+		};
+		BF887A4D2274004B001AB198 /* InitialSetUP */ = {
+			isa = PBXGroup;
+			children = (
+				BF887A1F2273F718001AB198 /* AppDelegate.swift */,
+				BF887A2B2273F71B001AB198 /* Info.plist */,
+			);
+			path = InitialSetUP;
+			sourceTree = "<group>";
+		};
+		BF887A4F22740093001AB198 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BF887A50227400B6001AB198 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BF887A52227401AA001AB198 /* RegisterPresenter.swift */,
+				BF887A53227401AA001AB198 /* RegisterWorker.swift */,
+				BF887A54227401AA001AB198 /* RegisterRouter.swift */,
+				BF887A55227401AA001AB198 /* RegisterModels.swift */,
+				BF887A56227401AA001AB198 /* RegisterViewController.swift */,
+				BF887A57227401AA001AB198 /* RegisterInteractor.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BF887A51227400C3001AB198 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				BF887A232273F719001AB198 /* Main.storyboard */,
+				BF887A282273F71B001AB198 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		BF887A5E22740259001AB198 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BF887A262273F71B001AB198 /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +311,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF887A222273F718001AB198 /* ViewController.swift in Sources */,
+				BF887A59227401AA001AB198 /* RegisterWorker.swift in Sources */,
+				BF887A5D227401AA001AB198 /* RegisterInteractor.swift in Sources */,
+				BF887A5B227401AA001AB198 /* RegisterModels.swift in Sources */,
+				BF887A5A227401AA001AB198 /* RegisterRouter.swift in Sources */,
+				BF887A5C227401AA001AB198 /* RegisterViewController.swift in Sources */,
 				BF887A202273F718001AB198 /* AppDelegate.swift in Sources */,
+				BF887A58227401AA001AB198 /* RegisterPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +494,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "ROUND-STREAK/Info.plist";
+				INFOPLIST_FILE = "ROUND-STREAK/InitialSetUP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "ROUND-STREAK/Info.plist";
+				INFOPLIST_FILE = "ROUND-STREAK/InitialSetUP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
