@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RegisterPresentationLogic {
-    func presentSomething(response: Register.Something.Response)
+    func presentAlert(alert : Register.LoginFailure.Responce)
 }
 
 class RegisterPresenter: RegisterPresentationLogic {
@@ -17,8 +17,7 @@ class RegisterPresenter: RegisterPresentationLogic {
     
     // MARK: Presentation logic
     
-    func presentSomething(response: Register.Something.Response) {
-        let viewModel = Register.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentAlert(alert : Register.LoginFailure.Responce)  {
+        viewController?.displayAlert(loginFailure: Register.LoginFailure.ViewModel(alertString: alert.alertString))
     }
 }

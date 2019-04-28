@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RegisterDisplayLogic: class {
-    func displaySomething(viewModel: Register.Something.ViewModel)
+   func displayAlert(loginFailure: Register.LoginFailure.ViewModel)
 }
 
 class RegisterViewController: UIViewController, RegisterDisplayLogic {
@@ -52,38 +52,7 @@ class RegisterViewController: UIViewController, RegisterDisplayLogic {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
          self.view.endEditing(true)
     }
-    
-    @objc func keyboardWillShow(notification:NSNotification) {
-        
-        adjustingHeight(show: true, notification: notification)
-    }
-    
-    @objc func keyboardWillHide(notification:NSNotification) {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.logoTopConstraint.constant = 0
-        })
-    }
-    
-    func adjustingHeight(show:Bool, notification:NSNotification) {
-
-       
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame.origin.y -= 30
-        let animationDurarion = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
-        let textFiledFrame = self.view.convert(currentTextField.frame, from:currentTextField.superview)
-
-        if keyboardFrame.intersects(textFiledFrame)  {
-            
-            let changeInHeight = keyboardFrame.origin.y - (textFiledFrame.origin.y + textFiledFrame.size.height)
-            UIView.animate(withDuration: animationDurarion, animations: {
-                self.logoTopConstraint.constant += changeInHeight
-            })
-        }
-    }
-    
-    @IBAction func didTouchOnRegister(_ sender: Any) {
-    }
+   
     // MARK: Setup
     
     private func setup() {
@@ -109,21 +78,53 @@ class RegisterViewController: UIViewController, RegisterDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
         configure()
     }
     
-    // MARK: Event handling
+    // MARK KEYBOARD NOTIFICATION
+    @objc func keyboardWillShow(notification:NSNotification) {
+        
+        adjustingHeight(show: true, notification: notification)
+    }
     
-    func doSomething() {
-        let request = Register.Something.Request()
-        interactor?.doSomething(request: request)
+    @objc func keyboardWillHide(notification:NSNotification) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.logoTopConstraint.constant = 0
+        })
+    }
+    
+    func adjustingHeight(show:Bool, notification:NSNotification) {
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame.origin.y -= 30
+        let animationDurarion = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let textFiledFrame = self.view.convert(currentTextField.frame, from:currentTextField.superview)
+        
+        if keyboardFrame.intersects(textFiledFrame)  {
+            
+            let changeInHeight = keyboardFrame.origin.y - (textFiledFrame.origin.y + textFiledFrame.size.height)
+            UIView.animate(withDuration: animationDurarion, animations: {
+                self.logoTopConstraint.constant += changeInHeight
+            })
+        }
+    }
+    
+    //MARK: Tap on Register
+    
+    @IBAction func didTouchOnRegister(_ sender: Any) {
+        
+        interactor?.loginWithData(request: Register.Login.Request(), loginData: Register.Login.LoginDetails(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? ""))
     }
     
     // MARK: Display logic
     
-    func displaySomething(viewModel: Register.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+    func displayAlert(loginFailure: Register.LoginFailure.ViewModel) {
+        
+        let alert = UIAlertController(title: "Alert", message: loginFailure.alertString, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"OK", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
+        }))
+        self.present(alert, animated: true, completion: {  })
     }
 }
 

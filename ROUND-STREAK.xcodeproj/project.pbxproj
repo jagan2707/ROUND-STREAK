@@ -19,6 +19,8 @@
 		BF887A5B227401AA001AB198 /* RegisterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A55227401AA001AB198 /* RegisterModels.swift */; };
 		BF887A5C227401AA001AB198 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A56227401AA001AB198 /* RegisterViewController.swift */; };
 		BF887A5D227401AA001AB198 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A57227401AA001AB198 /* RegisterInteractor.swift */; };
+		BF887A602274B0C9001AB198 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A5F2274B0C9001AB198 /* LoginModel.swift */; };
+		BF887A632274BD8F001AB198 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A622274BD8F001AB198 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		BF887A55227401AA001AB198 /* RegisterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModels.swift; sourceTree = "<group>"; };
 		BF887A56227401AA001AB198 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BF887A57227401AA001AB198 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		BF887A5F2274B0C9001AB198 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		BF887A622274BD8F001AB198 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				BF887A51227400C3001AB198 /* StoryBoard */,
 				BF887A50227400B6001AB198 /* Scenes */,
 				BF887A4F22740093001AB198 /* Models */,
+				BF887A612274BD4D001AB198 /* Exceptions */,
 			);
 			path = "ROUND-STREAK";
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 		BF887A4F22740093001AB198 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BF887A5F2274B0C9001AB198 /* LoginModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,12 +159,7 @@
 		BF887A50227400B6001AB198 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				BF887A52227401AA001AB198 /* RegisterPresenter.swift */,
-				BF887A53227401AA001AB198 /* RegisterWorker.swift */,
-				BF887A54227401AA001AB198 /* RegisterRouter.swift */,
-				BF887A55227401AA001AB198 /* RegisterModels.swift */,
-				BF887A56227401AA001AB198 /* RegisterViewController.swift */,
-				BF887A57227401AA001AB198 /* RegisterInteractor.swift */,
+				BF887A65227591EC001AB198 /* Register */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -178,6 +179,27 @@
 				BF887A262273F71B001AB198 /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		BF887A612274BD4D001AB198 /* Exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				BF887A622274BD8F001AB198 /* Error.swift */,
+			);
+			path = Exceptions;
+			sourceTree = "<group>";
+		};
+		BF887A65227591EC001AB198 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				BF887A52227401AA001AB198 /* RegisterPresenter.swift */,
+				BF887A53227401AA001AB198 /* RegisterWorker.swift */,
+				BF887A54227401AA001AB198 /* RegisterRouter.swift */,
+				BF887A55227401AA001AB198 /* RegisterModels.swift */,
+				BF887A56227401AA001AB198 /* RegisterViewController.swift */,
+				BF887A57227401AA001AB198 /* RegisterInteractor.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,7 +338,9 @@
 				BF887A5B227401AA001AB198 /* RegisterModels.swift in Sources */,
 				BF887A5A227401AA001AB198 /* RegisterRouter.swift in Sources */,
 				BF887A5C227401AA001AB198 /* RegisterViewController.swift in Sources */,
+				BF887A602274B0C9001AB198 /* LoginModel.swift in Sources */,
 				BF887A202273F718001AB198 /* AppDelegate.swift in Sources */,
+				BF887A632274BD8F001AB198 /* Error.swift in Sources */,
 				BF887A58227401AA001AB198 /* RegisterPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
