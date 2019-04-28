@@ -32,7 +32,9 @@ class RegisterInteractor: RegisterBusinessLogic {
         } else {
             
             worker.loginWithData(request: request, body: loginData, onSuccess: { (loginModel) in
-                print(loginModel.accessToken ?? "")
+                
+                let responce = Register.Login.Response(results: loginModel)
+                self.presenter?.updateLoginResponse(response: responce)
             }) { (error) in
             
                 self.presenter?.presentAlert(alert: Register.LoginFailure.Responce(alertString : "Login Faild"))

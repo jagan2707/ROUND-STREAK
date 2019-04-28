@@ -13,8 +13,7 @@ enum Register {
     
     enum Login {
         
-        struct LoginDetails
-        {
+        struct LoginDetails {
             var email: String
             var password: String
         }
@@ -23,9 +22,11 @@ enum Register {
         }
         
         struct Response {
+            var results : LoginModel
         }
         
         struct ViewModel {
+            var content: LoginModel
         }
     }
     enum LoginFailure

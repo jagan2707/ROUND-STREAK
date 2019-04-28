@@ -10,6 +10,7 @@ import UIKit
 
 protocol RegisterPresentationLogic {
     func presentAlert(alert : Register.LoginFailure.Responce)
+    func updateLoginResponse(response: Register.Login.Response)
 }
 
 class RegisterPresenter: RegisterPresentationLogic {
@@ -19,5 +20,11 @@ class RegisterPresenter: RegisterPresentationLogic {
     
     func presentAlert(alert : Register.LoginFailure.Responce)  {
         viewController?.displayAlert(loginFailure: Register.LoginFailure.ViewModel(alertString: alert.alertString))
+    }
+    
+    func updateLoginResponse(response: Register.Login.Response) {
+        
+        let viewModel = Register.Login.ViewModel(content: response.results)
+        viewController?.LoginSuccessWithModel(viewModel: viewModel)
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 protocol RegisterDisplayLogic: class {
    func displayAlert(loginFailure: Register.LoginFailure.ViewModel)
+   func LoginSuccessWithModel(viewModel: Register.Login.ViewModel)
 }
 
 class RegisterViewController: UIViewController, RegisterDisplayLogic {
@@ -72,6 +73,8 @@ class RegisterViewController: UIViewController, RegisterDisplayLogic {
         
         registerButton.layer.cornerRadius = self.view.frame.size.height * 0.03
         registerButton.clipsToBounds = true
+        emailTextField.text = "candidate@panya.me"
+        passwordTextField.text = "becoolatpanya"
     }
     
     // MARK: View lifecycle
@@ -126,6 +129,13 @@ class RegisterViewController: UIViewController, RegisterDisplayLogic {
         }))
         self.present(alert, animated: true, completion: {  })
     }
+    
+    func LoginSuccessWithModel(viewModel: Register.Login.ViewModel) {
+        
+        DispatchQueue.main.async {
+            self.router?.routeToBonusScreen(loginModel: viewModel.content)
+        }
+    }
 }
 
 extension RegisterViewController: UITextFieldDelegate {
@@ -146,4 +156,5 @@ extension RegisterViewController: UITextFieldDelegate {
         }
         return true
     }
+    
 }
