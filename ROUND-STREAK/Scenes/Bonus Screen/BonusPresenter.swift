@@ -9,7 +9,8 @@
 import UIKit
 
 protocol BonusPresentationLogic {
-    func presentSomething(response: Bonus.Something.Response)
+    func presentRoundStreak(response: Bonus.RoundStreak.Response)
+    func presentAlert(alert : Bonus.RoundStreakFailure)
 }
 
 class BonusPresenter: BonusPresentationLogic {
@@ -17,8 +18,14 @@ class BonusPresenter: BonusPresentationLogic {
     
     // MARK: Presentation logic
     
-    func presentSomething(response: Bonus.Something.Response) {
-        let viewModel = Bonus.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+     func presentRoundStreak(response: Bonus.RoundStreak.Response) {
+       
+        let viewModel = Bonus.RoundStreak.ViewModel(content: response.results)
+        viewController?.displayListOfRoundStreak(viewModel: viewModel)
+    }
+    
+    func presentAlert(alert : Bonus.RoundStreakFailure)  {
+        
+        viewController?.displayAlert(loginFailure: alert)
     }
 }

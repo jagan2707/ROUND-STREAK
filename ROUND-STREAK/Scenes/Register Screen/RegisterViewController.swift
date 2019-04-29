@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RegisterDisplayLogic: class {
-   func displayAlert(loginFailure: Register.LoginFailure.ViewModel)
+   func displayAlert(loginFailure: Register.LoginFailure)
    func LoginSuccessWithModel(viewModel: Register.Login.ViewModel)
 }
 
@@ -21,6 +21,8 @@ class RegisterViewController: UIViewController, RegisterDisplayLogic {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var emailView: UIImageView!
+    @IBOutlet weak var passwordView: UIImageView!
     var currentTextField: UITextField!
     
     var offsetY:CGFloat = 0
@@ -73,6 +75,13 @@ class RegisterViewController: UIViewController, RegisterDisplayLogic {
         
         registerButton.layer.cornerRadius = self.view.frame.size.height * 0.03
         registerButton.clipsToBounds = true
+        
+        emailView.layer.cornerRadius = self.view.frame.size.height * 0.02//emailView.frame.size.height * 0.3
+        emailView.clipsToBounds = true
+        
+        passwordView.layer.cornerRadius = self.view.frame.size.height * 0.02//passwordView.frame.size.height * 0.3
+        passwordView.clipsToBounds = true
+        
         emailTextField.text = "candidate@panya.me"
         passwordTextField.text = "becoolatpanya"
     }
@@ -122,7 +131,7 @@ class RegisterViewController: UIViewController, RegisterDisplayLogic {
     
     // MARK: Display logic
     
-    func displayAlert(loginFailure: Register.LoginFailure.ViewModel) {
+    func displayAlert(loginFailure: Register.LoginFailure) {
         
         let alert = UIAlertController(title: "Alert", message: loginFailure.alertString, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title:"OK", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in

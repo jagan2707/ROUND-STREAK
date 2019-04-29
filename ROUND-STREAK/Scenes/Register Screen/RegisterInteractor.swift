@@ -23,11 +23,11 @@ class RegisterInteractor: RegisterBusinessLogic {
         
         if !isValidEmailAddress(emailAddressString: loginData.email) {
             
-            presenter?.presentAlert(alert: Register.LoginFailure.Responce(alertString : "Please enter a valid email address."))
+            presenter?.presentAlert(alert: Register.LoginFailure(alertString : "Please enter a valid email address."))
             
         } else if !isValidPassword(passwordString: loginData.password) {
             
-            presenter?.presentAlert(alert: Register.LoginFailure.Responce(alertString : "Please enter valid password"))
+            presenter?.presentAlert(alert: Register.LoginFailure(alertString : "Please enter valid password"))
             
         } else {
             
@@ -37,7 +37,7 @@ class RegisterInteractor: RegisterBusinessLogic {
                 self.presenter?.updateLoginResponse(response: responce)
             }) { (error) in
             
-                self.presenter?.presentAlert(alert: Register.LoginFailure.Responce(alertString : "Login Faild"))
+                self.presenter?.presentAlert(alert: Register.LoginFailure(alertString : "Login Faild"))
             }
         }
     }

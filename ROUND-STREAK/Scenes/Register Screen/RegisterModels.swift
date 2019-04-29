@@ -29,13 +29,8 @@ enum Register {
             var content: LoginModel
         }
     }
-    enum LoginFailure
+    struct LoginFailure
     {
-        struct Responce {
-            var alertString: String
-        }
-        struct ViewModel {
-            var alertString: String
-        }
+      var alertString: String
     }
 }

@@ -20,6 +20,7 @@ class BonusCell: UITableViewCell {
     @IBOutlet weak var bgFourth: UIImageView!
     @IBOutlet weak var bgFifth: UIImageView!
     @IBOutlet weak var bgGiftView: UIImageView!
+    @IBOutlet weak var bgGiftTopView: UIImageView!
     
     @IBOutlet weak var numFirst: UILabel!
     @IBOutlet weak var numSecond: UILabel!
@@ -55,7 +56,6 @@ class BonusCell: UITableViewCell {
     }
     
     override func draw(_ rect: CGRect) {
-        print("layoutSubviews")
         makeRoundedCornersToFirstView()
         makeRoundedCornersToFifthView()
     }

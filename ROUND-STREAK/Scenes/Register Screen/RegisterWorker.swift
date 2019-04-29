@@ -51,5 +51,4 @@ class RegisterWorker {
     task.resume()
 }
    
-    
 }

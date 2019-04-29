@@ -11,12 +11,28 @@ import UIKit
 enum Bonus {
     // MARK: Use cases
     
-    enum Something {
+    enum RoundStreak {
+        
         struct Request {
+
+            struct Url {
+                let url = "https://api.panya.me/v2/test/streak-bonus"
+            }
+            struct Header {
+                var accessToken: String
+            }
         }
         struct Response {
+            var results : [Int]
         }
+        
         struct ViewModel {
+            var content: [Int]
         }
+    }
+    
+    struct RoundStreakFailure
+    {
+        var alertString: String
     }
 }
