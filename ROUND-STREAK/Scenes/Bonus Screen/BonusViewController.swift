@@ -87,11 +87,6 @@ extension BonusViewController: UITableViewDataSource
     {
         let cell:BonusCell = (tableView.dequeueReusableCell(withIdentifier: BonusCell.getCellIdentifier()) as! BonusCell?)!
         //self.setUpCell(cell: cell, indexPath: indexPath)
-        
-//        cell.firstView.layer.masksToBounds = true
-//        let maskLayer = CAShapeLayer()
-//        maskLayer.path = UIBezierPath(roundedRect: cell.firstView.bounds, byRoundingCorners: [.topLeft, .bottomLeft], cornerRadii: CGSize(width: cell.firstView.frame.size.width/2, height: cell.firstView.frame.size.height/2)).cgPath
-//        cell.firstView.layer.mask = maskLayer
         return cell
     }
     
@@ -101,7 +96,7 @@ extension BonusViewController: UITableViewDataSource
 extension BonusViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.size.height * 0.15;
+        return self.view.frame.size.width * 0.23;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

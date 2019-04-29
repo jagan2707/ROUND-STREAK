@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class BonusCell: UITableViewCell {
 
@@ -50,6 +51,10 @@ class BonusCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+       
+    }
+    
+    override func draw(_ rect: CGRect) {
         print("layoutSubviews")
         makeRoundedCornersToFirstView()
         makeRoundedCornersToFifthView()

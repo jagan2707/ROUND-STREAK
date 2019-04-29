@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF56800A2275FCE000C172C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5680092275FCE000C172C2 /* QuartzCore.framework */; };
 		BF887A202273F718001AB198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A1F2273F718001AB198 /* AppDelegate.swift */; };
 		BF887A252273F719001AB198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF887A232273F719001AB198 /* Main.storyboard */; };
 		BF887A272273F71B001AB198 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF887A262273F71B001AB198 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF5680092275FCE000C172C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BF887A1C2273F718001AB198 /* ROUND-STREAK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ROUND-STREAK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF887A1F2273F718001AB198 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF887A242273F719001AB198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF56800A2275FCE000C172C2 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF5680082275FCDF00C172C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF5680092275FCE000C172C2 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BF887A132273F718001AB198 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +120,7 @@
 				BF887A332273F71B001AB198 /* ROUND-STREAKTests */,
 				BF887A3E2273F71B001AB198 /* ROUND-STREAKUITests */,
 				BF887A1D2273F718001AB198 /* Products */,
+				BF5680082275FCDF00C172C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
