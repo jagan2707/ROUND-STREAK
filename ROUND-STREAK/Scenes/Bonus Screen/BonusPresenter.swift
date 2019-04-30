@@ -26,6 +26,6 @@ class BonusPresenter: BonusPresentationLogic {
     
     func presentAlert(alert : Bonus.RoundStreakFailure)  {
         
-        viewController?.displayAlert(loginFailure: alert)
+        viewController?.displayAlert(dataFailure: alert)
     }
 }

@@ -102,6 +102,7 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
             let numberLabel = cell.contentView.viewWithTag(200+index) as! UILabel
             
             if blockValue <= consecutiveRoundCount {
+                
                 //heighlet the block
                 imgView.alpha = 1.0
                 imgView.image = UIImage(named: "bg_streak_info_pink.png")
@@ -122,12 +123,14 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
         cell.bonusNum.text = "+\(roundStrikeList[indexPath.row])"
         if blockValue <= consecutiveRoundCount {
             
+            //Received
             cell.bgGiftView.image = UIImage(named: "ic_streak_heart_l_50.png")
             cell.bonusNum.isHidden = true
             cell.bgGiftTopView.isHidden = false
         }
         else {
             
+            // Not Received Showing heart icon with count
             cell.bgGiftView.image = UIImage(named: "ic_streak_heart_l.png")
             cell.bonusNum.isHidden = false
             cell.bgGiftTopView.isHidden = true
@@ -135,6 +138,7 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
    
         if indexPath.row == roundStrikeList.count-1 {
             
+            // last row showing gift Icon
             cell.bgGiftView.image = UIImage(named: "ic_streak_chest.png")
             cell.bonusNum.isHidden = true
             cell.bgGiftTopView.isHidden = true
@@ -154,12 +158,11 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     // MARK: Display logic
     
     func displayListOfRoundStreak(viewModel: Bonus.RoundStreak.ViewModel) {
-        
-        let responseData = viewModel.content
+
+        let responseData = Array(Set(viewModel.content))
         if responseData.count > 0 {
         roundStrikeList = responseData.sorted(by: <)
         }
-        print(roundStrikeList)
         DispatchQueue.main.async {
             self.removeActivityIndicator()
             self.roundStrikeTable.reloadData()
