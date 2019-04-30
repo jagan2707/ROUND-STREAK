@@ -29,6 +29,8 @@
 		BF887A712275B945001AB198 /* BonusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A6B2275B945001AB198 /* BonusViewController.swift */; };
 		BF887A722275B945001AB198 /* BonusInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A6C2275B945001AB198 /* BonusInteractor.swift */; };
 		BF887A752275C235001AB198 /* BonusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A742275C235001AB198 /* BonusCell.swift */; };
+		BFB401B22277E69B000B27D3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB401B02277E69B000B27D3 /* Reachability.swift */; };
+		BFB401B32277E69B000B27D3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB401B12277E69B000B27D3 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		BF887A6B2275B945001AB198 /* BonusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusViewController.swift; sourceTree = "<group>"; };
 		BF887A6C2275B945001AB198 /* BonusInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusInteractor.swift; sourceTree = "<group>"; };
 		BF887A742275C235001AB198 /* BonusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusCell.swift; sourceTree = "<group>"; };
+		BFB401B02277E69B000B27D3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		BFB401B12277E69B000B27D3 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,8 +190,8 @@
 		BF887A50227400B6001AB198 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				BF887A662275B911001AB198 /* Bonus Screen */,
 				BF887A65227591EC001AB198 /* Register Screen */,
+				BF887A662275B911001AB198 /* Bonus Screen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -212,7 +216,8 @@
 		BF887A612274BD4D001AB198 /* Exceptions */ = {
 			isa = PBXGroup;
 			children = (
-				BF887A622274BD8F001AB198 /* Error.swift */,
+				BFB401AC2277E63A000B27D3 /* Error */,
+				BFB401AF2277E69B000B27D3 /* NetWorkHandler */,
 			);
 			path = Exceptions;
 			sourceTree = "<group>";
@@ -249,6 +254,23 @@
 				BF887A742275C235001AB198 /* BonusCell.swift */,
 			);
 			path = TebleCell;
+			sourceTree = "<group>";
+		};
+		BFB401AC2277E63A000B27D3 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				BF887A622274BD8F001AB198 /* Error.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		BFB401AF2277E69B000B27D3 /* NetWorkHandler */ = {
+			isa = PBXGroup;
+			children = (
+				BFB401B02277E69B000B27D3 /* Reachability.swift */,
+				BFB401B12277E69B000B27D3 /* LoadingView.swift */,
+			);
+			path = NetWorkHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +410,7 @@
 				BF887A5D227401AA001AB198 /* RegisterInteractor.swift in Sources */,
 				BF887A6D2275B945001AB198 /* BonusPresenter.swift in Sources */,
 				BF887A6E2275B945001AB198 /* BonusWorker.swift in Sources */,
+				BFB401B22277E69B000B27D3 /* Reachability.swift in Sources */,
 				BF887A5B227401AA001AB198 /* RegisterModels.swift in Sources */,
 				BF887A702275B945001AB198 /* BonusModels.swift in Sources */,
 				BF887A5A227401AA001AB198 /* RegisterRouter.swift in Sources */,
@@ -398,6 +421,7 @@
 				BF887A632274BD8F001AB198 /* Error.swift in Sources */,
 				BF887A712275B945001AB198 /* BonusViewController.swift in Sources */,
 				BF887A58227401AA001AB198 /* RegisterPresenter.swift in Sources */,
+				BFB401B32277E69B000B27D3 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

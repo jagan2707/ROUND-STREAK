@@ -9,7 +9,7 @@
 import UIKit
 
 protocol BonusBusinessLogic {
-    func getListOfRounds(request: Bonus.RoundStreak.Request.Url, header: Bonus.RoundStreak.Request.Header)
+    func getListOfRounds(request: Bonus.RoundStreak.Request)
 }
 
 class BonusInteractor: BonusBusinessLogic {
@@ -18,15 +18,15 @@ class BonusInteractor: BonusBusinessLogic {
     
     // MARK: Business logic
     
-    func getListOfRounds(request: Bonus.RoundStreak.Request.Url, header: Bonus.RoundStreak.Request.Header) {
+    func getListOfRounds(request: Bonus.RoundStreak.Request) {
        
-        worker.getListOfRoundsWith(request: request, header: header, onSuccess: { (listOfRounds) in
+        worker.getListOfRoundsWith(request: request, onSuccess: { (listOfRounds) in
             let response = Bonus.RoundStreak.Response(results: listOfRounds)
             self.presenter?.presentRoundStreak(response: response)
             
-        }) { (error) in
+        }) { (roundStreakFailure) in
             
-            self.presenter?.presentAlert(alert: Bonus.RoundStreakFailure(alertString: "Something wrong. Please try again"))
+            self.presenter?.presentAlert(alert: Bonus.RoundStreakFailure(alertString: roundStreakFailure.alertString))
         }
     
     }

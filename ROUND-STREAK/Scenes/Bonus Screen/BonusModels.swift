@@ -14,13 +14,8 @@ enum Bonus {
     enum RoundStreak {
         
         struct Request {
-
-            struct Url {
-                let url = "https://api.panya.me/v2/test/streak-bonus"
-            }
-            struct Header {
-                var accessToken: String
-            }
+        let url = "https://api.panya.me/v2/test/streak-bonus"
+        var accessToken: String
         }
         struct Response {
             var results : [Int]

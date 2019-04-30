@@ -11,17 +11,18 @@ import UIKit
 protocol BonusDisplayLogic: class {
     
 func displayListOfRoundStreak(viewModel: Bonus.RoundStreak.ViewModel)
-func displayAlert(loginFailure: Bonus.RoundStreakFailure)
+func displayAlert(dataFailure: Bonus.RoundStreakFailure)
 }
 
 class BonusViewController: UIViewController, BonusDisplayLogic {
     
     var interactor: BonusBusinessLogic?
     var router: BonusRoutingLogic?
-    var loginRespose: LoginModel?
+    var loginRespose: Register.Login.ViewModel.DisplayedData?
     var consecutiveRoundCount: Int!
     var roundStrikeList = [Int]()
-    
+    var loadingView: LoadingView?
+
     @IBOutlet weak var roundStrikeTable: UITableView!
     // MARK: Object lifecycle
     
@@ -36,7 +37,6 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     }
     
     // MARK: Setup
-    
     private func setup() {
         let viewController = self
         let interactor = BonusInteractor()
@@ -61,17 +61,20 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
         
         configure()
         getBonusList()
-        
     }
     
     // MARK: Event handling
     
     func getBonusList() {
         
+        if (!Reachability.isConnectedToNetwork()){
+            self.showNetworkAlert()
+            return
+        }
+        addActivityIndicator()
         if let accessToken = loginRespose?.accessToken {
-        let request = Bonus.RoundStreak.Request.Url()
-        let header = Bonus.RoundStreak.Request.Header(accessToken: accessToken)
-        interactor?.getListOfRounds(request: request, header: header)
+        let request = Bonus.RoundStreak.Request(accessToken: accessToken)
+        interactor?.getListOfRounds(request: request)
         }
     }
     
@@ -81,7 +84,7 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     
     //MARK: Setup TableView Cell
     
-    func setUpCell(cell: BonusCell, indexPath: IndexPath) {
+   private func setUpCell(cell: BonusCell, indexPath: IndexPath) {
         
         let additionValue = (indexPath.row * 5)
         
@@ -138,23 +141,46 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
         }
     }
     
+    //MARK: Loader
+    private func addActivityIndicator() {
+        loadingView = LoadingView(frame:(self.view.bounds))
+        self.view.addSubview(loadingView!)
+    }
+    
+    private func removeActivityIndicator() {
+        loadingView?.removeFromSuperview()
+    }
+    
     // MARK: Display logic
     
     func displayListOfRoundStreak(viewModel: Bonus.RoundStreak.ViewModel) {
+        
         let responseData = viewModel.content
         if responseData.count > 0 {
         roundStrikeList = responseData.sorted(by: <)
         }
         print(roundStrikeList)
         DispatchQueue.main.async {
+            self.removeActivityIndicator()
             self.roundStrikeTable.reloadData()
         }
     }
     
-    
-    func displayAlert(loginFailure: Bonus.RoundStreakFailure) {
+    func displayAlert(dataFailure: Bonus.RoundStreakFailure) {
         
-        let alert = UIAlertController(title: "Alert", message: loginFailure.alertString, preferredStyle: .alert)
+        DispatchQueue.main.async {
+            self.removeActivityIndicator()
+            let alert = UIAlertController(title: "Round Streak", message: dataFailure.alertString, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"OK", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
+            }))
+            self.present(alert, animated: true, completion: {  })
+        }
+        
+    }
+    
+    //MARK: ALERT
+    private func showNetworkAlert()  {
+        let alert = UIAlertController(title: "No Internet", message: "Please check your device internet connection and try again", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title:"OK", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
         }))
         self.present(alert, animated: true, completion: {  })

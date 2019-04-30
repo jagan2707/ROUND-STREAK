@@ -16,6 +16,7 @@ protocol RegisterDisplayLogic: class {
 class RegisterViewController: UIViewController, RegisterDisplayLogic {
     var interactor: RegisterBusinessLogic?
     var router: RegisterRoutingLogic?
+    var loadingView: LoadingView?
     
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailTextField: UITextField!
@@ -122,28 +123,60 @@ class RegisterViewController: UIViewController, RegisterDisplayLogic {
         }
     }
     
+    //MARK: Loader
+    private func addActivityIndicator() {
+        loadingView = LoadingView(frame:(self.view.bounds))
+        self.view.addSubview(loadingView!)
+    }
+    
+    private func removeActivityIndicator() {
+        loadingView?.removeFromSuperview()
+    }
+    
     //MARK: Tap on Register
     
     @IBAction func didTouchOnRegister(_ sender: Any) {
         
-        interactor?.loginWithData(request: Register.Login.Request(), loginData: Register.Login.LoginDetails(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? ""))
+        if (!Reachability.isConnectedToNetwork()){
+            self.showNetworkAlert()
+            return
+        }
+        login()
+    }
+    
+    private func login() {
+        
+        addActivityIndicator()
+        interactor?.loginWithData(request: Register.Login.Request(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? ""))
     }
     
     // MARK: Display logic
     
     func displayAlert(loginFailure: Register.LoginFailure) {
         
-        let alert = UIAlertController(title: "Alert", message: loginFailure.alertString, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title:"OK", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
-        }))
-        self.present(alert, animated: true, completion: {  })
+        DispatchQueue.main.async {
+            self.removeActivityIndicator()
+            let alert = UIAlertController(title: "Email/Password Login", message: loginFailure.alertString, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"OK", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
+            }))
+            self.present(alert, animated: true, completion: {  })
+        }
     }
     
     func LoginSuccessWithModel(viewModel: Register.Login.ViewModel) {
         
         DispatchQueue.main.async {
-            self.router?.routeToBonusScreen(loginModel: viewModel.content)
+            self.removeActivityIndicator()
+            self.router?.routeToBonusScreen(loginModel: viewModel.displayedData)
         }
+    }
+    
+    //MARK: ALERT
+    private func showNetworkAlert()  {
+        let alert = UIAlertController(title: "No Internet", message: "Please check your device internet connection and try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"OK", style: .cancel, handler: {(_ action: UIAlertAction) -> Void in
+        }))
+        self.present(alert, animated: true, completion: {  })
     }
 }
 

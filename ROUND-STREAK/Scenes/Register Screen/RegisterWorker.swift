@@ -10,13 +10,13 @@ import UIKit
 
 class RegisterWorker {
   
-    //MARK: Get Mobile List
-    func loginWithData(request: Register.Login.Request,body:Register.Login.LoginDetails,   onSuccess success: @escaping (_ result: LoginModel) -> Void, onFailure failure: @escaping (_ error: Error?) -> Void) {
+    //MARK: Login Api
+    func loginWithData(request: Register.Login.Request, onSuccess success: @escaping (_ result: LoginModel) -> Void, onFailure failure: @escaping (_ loginFailure: Register.LoginFailure?) -> Void) {
         
         let url = URL(string: request.url)!
        
-        let json: [String: Any] = ["email": body.email,
-                                   "password": body.password]
+        let json: [String: Any] = ["email": request.email,
+                                   "password": request.password]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
         
         var request = URLRequest(url: url)
@@ -35,17 +35,26 @@ class RegisterWorker {
             if let responseJSON = responseJSON as? [String: Any] {
                 
                 if responseJSON["error"] != nil {
-                    failure(ReturnError.invalidJson)
+                    
+                    let errorDict = responseJSON["error"] as? [String: Any]
+                    let errorMessage = errorDict?["message"] ?? "Please enter valid email and password"
+                    let loginFailure = Register.LoginFailure(alertString: errorMessage as! String)
+                    failure(loginFailure)
                     return
                 }
-                
-                if let responseDic = responseJSON["data"] as? [String: Any]   {
+                else if let responseDic = responseJSON["data"] as? [String: Any]   {
+                    
                 let loginModel = LoginModel(from: responseDic)
                 success(loginModel)
+                } else {
+                    throw ReturnError.invalidJson
                 }
             }
-            } catch let error as NSError {
-                failure(error)
+            } catch _ as NSError {
+                
+                let errorMessage = "Something went wrong!!. Please try again"
+                let loginFailure = Register.LoginFailure(alertString: errorMessage )
+                failure(loginFailure)
             }
         }
     task.resume()

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RegisterBusinessLogic {
-  func loginWithData(request: Register.Login.Request, loginData: Register.Login.LoginDetails)
+  func loginWithData(request: Register.Login.Request)
 }
 
 class RegisterInteractor: RegisterBusinessLogic {
@@ -19,25 +19,25 @@ class RegisterInteractor: RegisterBusinessLogic {
     // MARK: Validation
 
 
-    func loginWithData(request: Register.Login.Request, loginData: Register.Login.LoginDetails) {
+    func loginWithData(request: Register.Login.Request) {
         
-        if !isValidEmailAddress(emailAddressString: loginData.email) {
+        if !isValidEmailAddress(emailAddressString: request.email) {
             
             presenter?.presentAlert(alert: Register.LoginFailure(alertString : "Please enter a valid email address."))
             
-        } else if !isValidPassword(passwordString: loginData.password) {
+        } else if !isValidPassword(passwordString: request.password) {
             
             presenter?.presentAlert(alert: Register.LoginFailure(alertString : "Please enter valid password"))
             
         } else {
             
-            worker.loginWithData(request: request, body: loginData, onSuccess: { (loginModel) in
+            worker.loginWithData(request: request, onSuccess: { loginModel in
                 
                 let responce = Register.Login.Response(results: loginModel)
                 self.presenter?.updateLoginResponse(response: responce)
-            }) { (error) in
+            }) { loginFailure in
             
-                self.presenter?.presentAlert(alert: Register.LoginFailure(alertString : "Login Faild"))
+                self.presenter?.presentAlert(alert: Register.LoginFailure(alertString : loginFailure?.alertString ?? "Please enter valid email and password"))
             }
         }
     }

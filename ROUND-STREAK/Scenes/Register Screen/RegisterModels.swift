@@ -13,12 +13,10 @@ enum Register {
     
     enum Login {
         
-        struct LoginDetails {
-            var email: String
-            var password: String
-        }
         struct Request {
             let url = "https://api.panya.me/v2/test/login"
+            var email: String
+            var password: String
         }
         
         struct Response {
@@ -26,7 +24,13 @@ enum Register {
         }
         
         struct ViewModel {
-            var content: LoginModel
+            
+            struct DisplayedData
+            {
+                public let consecutiveRoundCount:Int?
+                public let accessToken: String?
+            }
+            var displayedData: DisplayedData
         }
     }
     struct LoginFailure
