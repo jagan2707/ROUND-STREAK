@@ -9,10 +9,11 @@
 import UIKit
 
 class BonusWorker {
-    
     func getListOfRoundsWith(request: Bonus.RoundStreak.Request, onSuccess success: @escaping (_ result: [Int]) -> Void, onFailure failure: @escaping (_ roundStreakFailure: Bonus.RoundStreakFailure) -> Void) {
-        
-        let url = URL(string: request.url)!
+        let urlString = "https://api.panya.me/v2/test/streak-bonus"
+        guard let url = URL(string: urlString) else {
+            return
+        }
         let accessToken = request.accessToken
         var request = URLRequest(url: url)
         request.setValue(accessToken, forHTTPHeaderField:"access-token")
@@ -31,13 +32,11 @@ class BonusWorker {
                 if let responseJSON = responseJSON as? [String: Any] {
                     
                     if let dataArray = responseJSON["data"] as? [String: Any]   {
-                        
                         if let responseArray = dataArray["streak_bonus"] {
                             success(responseArray as! [Int])
                         }
                     }
                     else {
-                        
                         var alertMessage = "Data not found"
                         if responseJSON["error"] != nil {
                             let errorDict = responseJSON["error"] as? [String: Any]
@@ -51,7 +50,6 @@ class BonusWorker {
             }
         }
         task.resume()
-        
     }
     
 }

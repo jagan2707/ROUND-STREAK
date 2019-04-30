@@ -14,7 +14,6 @@ enum Register {
     enum Login {
         
         struct Request {
-            let url = "https://api.panya.me/v2/test/login"
             var email: String
             var password: String
         }
@@ -27,8 +26,8 @@ enum Register {
             
             struct DisplayedData
             {
-                public let consecutiveRoundCount:Int?
-                public let accessToken: String?
+                 let consecutiveRoundCount:Int?
+                 let accessToken: String?
             }
             var displayedData: DisplayedData
         }

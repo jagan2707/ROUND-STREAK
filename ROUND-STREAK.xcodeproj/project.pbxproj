@@ -31,6 +31,9 @@
 		BF887A752275C235001AB198 /* BonusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF887A742275C235001AB198 /* BonusCell.swift */; };
 		BFB401B22277E69B000B27D3 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB401B02277E69B000B27D3 /* Reachability.swift */; };
 		BFB401B32277E69B000B27D3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB401B12277E69B000B27D3 /* LoadingView.swift */; };
+		BFB401BE227848F4000B27D3 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB401BB227848F4000B27D3 /* StickyHeaderView.swift */; };
+		BFB401BF227848F4000B27D3 /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB401BC227848F4000B27D3 /* StickyHeader.swift */; };
+		BFB401C0227848F4000B27D3 /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB401BD227848F4000B27D3 /* UIScrollViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,10 @@
 		BF887A742275C235001AB198 /* BonusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusCell.swift; sourceTree = "<group>"; };
 		BFB401B02277E69B000B27D3 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		BFB401B12277E69B000B27D3 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		BFB401BA227848F4000B27D3 /* StickyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickyHeader.h; sourceTree = "<group>"; };
+		BFB401BB227848F4000B27D3 /* StickyHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
+		BFB401BC227848F4000B27D3 /* StickyHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeader.swift; sourceTree = "<group>"; };
+		BFB401BD227848F4000B27D3 /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,13 +148,14 @@
 		BF887A1E2273F718001AB198 /* ROUND-STREAK */ = {
 			isa = PBXGroup;
 			children = (
-				BF887A5E22740259001AB198 /* Resource */,
 				BF887A4D2274004B001AB198 /* InitialSetUP */,
 				BF887A51227400C3001AB198 /* StoryBoard */,
 				BF887A50227400B6001AB198 /* Scenes */,
 				BF887A4F22740093001AB198 /* Models */,
 				BF887A732275C1EC001AB198 /* TebleCell */,
 				BF887A612274BD4D001AB198 /* Exceptions */,
+				BFB401B9227848F4000B27D3 /* StickyHeader */,
+				BF887A5E22740259001AB198 /* Resource */,
 			);
 			path = "ROUND-STREAK";
 			sourceTree = "<group>";
@@ -271,6 +279,17 @@
 				BFB401B12277E69B000B27D3 /* LoadingView.swift */,
 			);
 			path = NetWorkHandler;
+			sourceTree = "<group>";
+		};
+		BFB401B9227848F4000B27D3 /* StickyHeader */ = {
+			isa = PBXGroup;
+			children = (
+				BFB401BA227848F4000B27D3 /* StickyHeader.h */,
+				BFB401BB227848F4000B27D3 /* StickyHeaderView.swift */,
+				BFB401BC227848F4000B27D3 /* StickyHeader.swift */,
+				BFB401BD227848F4000B27D3 /* UIScrollViewExtension.swift */,
+			);
+			path = StickyHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,15 +432,18 @@
 				BFB401B22277E69B000B27D3 /* Reachability.swift in Sources */,
 				BF887A5B227401AA001AB198 /* RegisterModels.swift in Sources */,
 				BF887A702275B945001AB198 /* BonusModels.swift in Sources */,
+				BFB401BE227848F4000B27D3 /* StickyHeaderView.swift in Sources */,
 				BF887A5A227401AA001AB198 /* RegisterRouter.swift in Sources */,
 				BF887A5C227401AA001AB198 /* RegisterViewController.swift in Sources */,
 				BF887A602274B0C9001AB198 /* LoginModel.swift in Sources */,
+				BFB401BF227848F4000B27D3 /* StickyHeader.swift in Sources */,
 				BF887A6F2275B945001AB198 /* BonusRouter.swift in Sources */,
 				BF887A202273F718001AB198 /* AppDelegate.swift in Sources */,
 				BF887A632274BD8F001AB198 /* Error.swift in Sources */,
 				BF887A712275B945001AB198 /* BonusViewController.swift in Sources */,
 				BF887A58227401AA001AB198 /* RegisterPresenter.swift in Sources */,
 				BFB401B32277E69B000B27D3 /* LoadingView.swift in Sources */,
+				BFB401C0227848F4000B27D3 /* UIScrollViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

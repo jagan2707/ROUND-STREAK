@@ -9,7 +9,6 @@
 import UIKit
 
 protocol BonusDisplayLogic: class {
-    
 func displayListOfRoundStreak(viewModel: Bonus.RoundStreak.ViewModel)
 func displayAlert(dataFailure: Bonus.RoundStreakFailure)
 }
@@ -24,8 +23,10 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     var loadingView: LoadingView?
 
     @IBOutlet weak var roundStrikeTable: UITableView!
-    // MARK: Object lifecycle
+    @IBOutlet weak var roundCountLabel: UILabel!
+    @IBOutlet weak var headerView: UIView!
     
+    // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -51,14 +52,17 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     
     // MARK: Configuration
     private func configure() {
+        self.roundCountLabel.text = "You have consecutively played : \(loginRespose?.consecutiveRoundCount ?? 0) rounds"
         consecutiveRoundCount = loginRespose?.consecutiveRoundCount ?? 0
+        self.roundStrikeTable.stickyHeader.view = headerView
+        self.roundStrikeTable.stickyHeader.height = 223
+        self.roundStrikeTable.stickyHeader.minimumHeight = 0
     }
     
     // MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
         getBonusList()
     }
@@ -66,7 +70,6 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     // MARK: Event handling
     
     func getBonusList() {
-        
         if (!Reachability.isConnectedToNetwork()){
             self.showNetworkAlert()
             return
@@ -85,51 +88,38 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     //MARK: Setup TableView Cell
     
    private func setUpCell(cell: BonusCell, indexPath: IndexPath) {
-        
         let additionValue = (indexPath.row * 5)
-        
         let numLabelArray = [cell.numFirst,cell.numSecond,cell.numThird,cell.numFour,cell.numFive]
-        
         var blockValue = 1
-        
         for (index, label) in numLabelArray.enumerated() {
-            
             let indexNum = index+1
             blockValue = additionValue + indexNum
             label?.text = "\(blockValue)"
-            
             let imgView = cell.contentView.viewWithTag(100+index) as! UIImageView
             let numberLabel = cell.contentView.viewWithTag(200+index) as! UILabel
-            
             if blockValue <= consecutiveRoundCount {
-                
                 //heighlet the block
                 imgView.alpha = 1.0
                 imgView.image = UIImage(named: "bg_streak_info_pink.png")
-                
                 numberLabel.text = "\(blockValue)"
                 numberLabel.textColor = UIColor(red: 255.0/255.0, green: 223.0/255.0, blue: 0.0/255.0, alpha: 1)
             } else {
                 //unheighlet the block
-                
                 imgView.alpha = 0.75
                 imgView.image = nil
-                
                 numberLabel.text = "\(blockValue)"
                 numberLabel.textColor = UIColor.lightText
             }
         }
-        
         cell.bonusNum.text = "+\(roundStrikeList[indexPath.row])"
+        cell.bonusNum.textColor = .white
         if blockValue <= consecutiveRoundCount {
-            
             //Received
             cell.bgGiftView.image = UIImage(named: "ic_streak_heart_l_50.png")
-            cell.bonusNum.isHidden = true
+            cell.bonusNum.isHidden = false
+            cell.bonusNum.textColor = .lightText
             cell.bgGiftTopView.isHidden = false
-        }
-        else {
-            
+        } else {
             // Not Received Showing heart icon with count
             cell.bgGiftView.image = UIImage(named: "ic_streak_heart_l.png")
             cell.bonusNum.isHidden = false
@@ -137,7 +127,6 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
         }
    
         if indexPath.row == roundStrikeList.count-1 {
-            
             // last row showing gift Icon
             cell.bgGiftView.image = UIImage(named: "ic_streak_chest.png")
             cell.bonusNum.isHidden = true
@@ -156,9 +145,7 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     }
     
     // MARK: Display logic
-    
     func displayListOfRoundStreak(viewModel: Bonus.RoundStreak.ViewModel) {
-
         let responseData = Array(Set(viewModel.content))
         if responseData.count > 0 {
         roundStrikeList = responseData.sorted(by: <)
@@ -170,7 +157,6 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     }
     
     func displayAlert(dataFailure: Bonus.RoundStreakFailure) {
-        
         DispatchQueue.main.async {
             self.removeActivityIndicator()
             let alert = UIAlertController(title: "Round Streak", message: dataFailure.alertString, preferredStyle: .alert)
@@ -178,7 +164,6 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
             }))
             self.present(alert, animated: true, completion: {  })
         }
-        
     }
     
     //MARK: ALERT
@@ -212,12 +197,6 @@ extension BonusViewController: UITableViewDataSource
 extension BonusViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.size.width * 0.22;
+        return self.view.frame.size.width * 0.25;
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-    }
-
 }
