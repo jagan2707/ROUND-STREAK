@@ -179,11 +179,14 @@ extension RegisterViewController: UITextFieldDelegate {
         currentTextField = nil
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == self.emailTextField {
+        if textField == self.emailTextField && (self.passwordTextField.text?.isEmpty)!  {
             self.passwordTextField.becomeFirstResponder()
         }
-        else {
-        textField.resignFirstResponder()
+        else if !(emailTextField.text?.isEmpty)! && !(self.passwordTextField.text?.isEmpty)! {
+         textField.resignFirstResponder()
+         self.didTouchOnRegister(self)
+        } else {
+            textField.resignFirstResponder()
         }
         return true
     }

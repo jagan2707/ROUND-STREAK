@@ -511,8 +511,11 @@
                                                                 <constraint firstAttribute="height" constant="1" id="y9C-mb-NWk"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have consecutively played : 117 rounds" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kqs-My-b8O">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kqs-My-b8O">
                                                             <rect key="frame" x="27" y="191.5" width="266" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" priority="250" constant="20.5" id="Kby-wI-Z9n"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
