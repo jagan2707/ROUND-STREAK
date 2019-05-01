@@ -186,14 +186,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_pri" translatesAutoresizingMaskIntoConstraints="NO" id="Nrb-QX-zV6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND STREAK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g5-Pe-b4k">
-                                <rect key="frame" x="79" y="60" width="162" height="26"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND STREAK" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="2g5-Pe-b4k">
+                                <rect key="frame" x="80" y="47.5" width="160" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V3h-D5-y3B">
-                                <rect key="frame" x="0.0" y="91" width="320" height="477"/>
+                                <rect key="frame" x="0.0" y="97.5" width="320" height="470.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BonusCell" rowHeight="70" id="Ydz-Hn-ZrJ" customClass="BonusCell" customModule="ROUND_STREAK" customModuleProvider="target">
@@ -203,7 +203,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_streak_info_blue" translatesAutoresizingMaskIntoConstraints="NO" id="aUr-R3-tx2">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_streak_info_blue" translatesAutoresizingMaskIntoConstraints="NO" id="aUr-R3-tx2">
                                                     <rect key="frame" x="5" y="5" width="310" height="60"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQE-11-Qff">
@@ -248,7 +248,7 @@
                                                             <color key="backgroundColor" red="0.058823529411764705" green="0.027450980392156862" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ef-FD-F3e">
-                                                            <rect key="frame" x="7" y="8.5" width="28" height="8.5"/>
+                                                            <rect key="frame" x="7" y="8.5" width="28" height="9"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="7"/>
                                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -282,7 +282,7 @@
                                                             <color key="backgroundColor" red="0.058823529411764705" green="0.027450980392156862" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUA-TG-ffA">
-                                                            <rect key="frame" x="7" y="8.5" width="27.5" height="8.5"/>
+                                                            <rect key="frame" x="7" y="8.5" width="27" height="9"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="7"/>
                                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -316,7 +316,7 @@
                                                             <color key="backgroundColor" red="0.058823529411764705" green="0.027450980392156862" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmr-GK-bAi">
-                                                            <rect key="frame" x="7.5" y="8.5" width="27.5" height="8.5"/>
+                                                            <rect key="frame" x="7.5" y="8.5" width="27.5" height="9"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="7"/>
                                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -350,7 +350,7 @@
                                                             <color key="backgroundColor" red="0.058823529411764705" green="0.027450980392156862" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="1oG-aj-DC8">
-                                                            <rect key="frame" x="0.0" y="8.5" width="41.5" height="8.5"/>
+                                                            <rect key="frame" x="0.0" y="8.5" width="41.5" height="9"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="7"/>
                                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -386,7 +386,7 @@
                                                             <color key="backgroundColor" red="0.058823529411764705" green="0.027450980392156862" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROUND" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V8-gi-CKd">
-                                                            <rect key="frame" x="7" y="8.5" width="27.5" height="8.5"/>
+                                                            <rect key="frame" x="7" y="8.5" width="27.5" height="9"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="7"/>
                                                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -464,6 +464,101 @@
                                             <outlet property="numThird" destination="Zgw-vr-QzP" id="Sof-b9-fcY"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="235" id="2tF-4b-X34" customClass="HeaderCell" customModule="ROUND_STREAK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="98" width="320" height="235"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2tF-4b-X34" id="toj-EE-s5n">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="235"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ap3-fD-ggR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="235"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The more rounds joined, the more hearts given" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T1x-Hd-TRS">
+                                                            <rect key="frame" x="22" y="65" width="276" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(join the game before the first quastion appears)" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rW1-SV-z0x">
+                                                            <rect key="frame" x="17.5" y="92.5" width="285" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.90980392160000001" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive extra level Join the game for " textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="8sa-HA-oeZ">
+                                                            <rect key="frame" x="51" y="10" width="225" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="more than 5 consecutive rounds" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ba1-Mn-ydU">
+                                                            <rect key="frame" x="65" y="37.5" width="190" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.90980392160000001" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miss a single round and start over" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sC9-Nb-t3o">
+                                                            <rect key="frame" x="60.5" y="120" width="199" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKB-Vg-OF4">
+                                                            <rect key="frame" x="20" y="165.5" width="280" height="1"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="y9C-mb-NWk"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have consecutively played : 117 rounds" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kqs-My-b8O">
+                                                            <rect key="frame" x="27" y="191.5" width="266" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ich-UE-w9Q" firstAttribute="bottom" secondItem="kqs-My-b8O" secondAttribute="bottom" constant="23" id="AKY-v3-jWp"/>
+                                                        <constraint firstItem="kqs-My-b8O" firstAttribute="top" secondItem="MKB-Vg-OF4" secondAttribute="bottom" constant="25" id="Epj-YP-mfi"/>
+                                                        <constraint firstItem="ich-UE-w9Q" firstAttribute="trailing" secondItem="MKB-Vg-OF4" secondAttribute="trailing" constant="20" id="IEw-Y6-TKA"/>
+                                                        <constraint firstItem="T1x-Hd-TRS" firstAttribute="centerX" secondItem="Ap3-fD-ggR" secondAttribute="centerX" id="IaF-Pw-1pK"/>
+                                                        <constraint firstItem="T1x-Hd-TRS" firstAttribute="top" secondItem="ba1-Mn-ydU" secondAttribute="bottom" constant="7" id="KVP-0X-KSJ"/>
+                                                        <constraint firstItem="MKB-Vg-OF4" firstAttribute="leading" secondItem="ich-UE-w9Q" secondAttribute="leading" constant="20" id="LX9-Cf-gIQ"/>
+                                                        <constraint firstItem="8sa-HA-oeZ" firstAttribute="centerX" secondItem="Ap3-fD-ggR" secondAttribute="centerX" constant="3.5" id="RBr-cw-aJD"/>
+                                                        <constraint firstItem="kqs-My-b8O" firstAttribute="centerX" secondItem="Ap3-fD-ggR" secondAttribute="centerX" id="WNk-sg-cA6"/>
+                                                        <constraint firstItem="ba1-Mn-ydU" firstAttribute="centerX" secondItem="Ap3-fD-ggR" secondAttribute="centerX" id="Zs4-Jm-D21"/>
+                                                        <constraint firstItem="ba1-Mn-ydU" firstAttribute="top" secondItem="8sa-HA-oeZ" secondAttribute="bottom" constant="7" id="cn0-uj-qwC"/>
+                                                        <constraint firstItem="rW1-SV-z0x" firstAttribute="top" secondItem="T1x-Hd-TRS" secondAttribute="bottom" constant="7" id="ff1-pv-NgQ"/>
+                                                        <constraint firstItem="sC9-Nb-t3o" firstAttribute="top" secondItem="rW1-SV-z0x" secondAttribute="bottom" constant="7" id="fvA-i9-rBe"/>
+                                                        <constraint firstItem="rW1-SV-z0x" firstAttribute="centerX" secondItem="Ap3-fD-ggR" secondAttribute="centerX" id="hpw-jv-lu8"/>
+                                                        <constraint firstItem="8sa-HA-oeZ" firstAttribute="top" secondItem="Ap3-fD-ggR" secondAttribute="top" constant="10" id="yWh-LN-7R4"/>
+                                                        <constraint firstItem="sC9-Nb-t3o" firstAttribute="centerX" secondItem="Ap3-fD-ggR" secondAttribute="centerX" id="ymQ-5U-7Ap"/>
+                                                        <constraint firstItem="MKB-Vg-OF4" firstAttribute="top" secondItem="sC9-Nb-t3o" secondAttribute="bottom" constant="25" id="zav-Uh-ysl"/>
+                                                    </constraints>
+                                                    <viewLayoutGuide key="safeArea" id="ich-UE-w9Q"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="ba1-Mn-ydU" firstAttribute="width" secondItem="toj-EE-s5n" secondAttribute="width" multiplier="0.594" id="0qI-vr-qS7"/>
+                                                <constraint firstItem="sC9-Nb-t3o" firstAttribute="width" secondItem="toj-EE-s5n" secondAttribute="width" multiplier="0.623" id="KpN-Mr-Mkn"/>
+                                                <constraint firstItem="Ap3-fD-ggR" firstAttribute="leading" secondItem="toj-EE-s5n" secondAttribute="leading" id="Rxg-20-OBx"/>
+                                                <constraint firstItem="kqs-My-b8O" firstAttribute="width" secondItem="toj-EE-s5n" secondAttribute="width" multiplier="0.83" id="UYS-nz-oSc"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ap3-fD-ggR" secondAttribute="trailing" id="bHO-G3-xVF"/>
+                                                <constraint firstItem="Ap3-fD-ggR" firstAttribute="top" secondItem="toj-EE-s5n" secondAttribute="top" id="dvy-7J-4ab"/>
+                                                <constraint firstItem="T1x-Hd-TRS" firstAttribute="width" secondItem="toj-EE-s5n" secondAttribute="width" multiplier="0.862" id="gdI-AD-hDx"/>
+                                                <constraint firstItem="8sa-HA-oeZ" firstAttribute="width" secondItem="toj-EE-s5n" secondAttribute="width" multiplier="0.685" constant="5.7999999999999829" id="lFm-jI-6xH"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ap3-fD-ggR" secondAttribute="bottom" id="oOP-KB-utF"/>
+                                                <constraint firstItem="rW1-SV-z0x" firstAttribute="width" secondItem="toj-EE-s5n" secondAttribute="width" multiplier="0.892" id="v47-4e-uhP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="consecutiveRoundLabel" destination="kqs-My-b8O" id="eoe-aS-B4v"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="cte-0I-sVI" id="Lfa-QR-eNu"/>
@@ -480,11 +575,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2g5-Pe-b4k" firstAttribute="top" secondItem="LO4-76-Fot" secondAttribute="top" constant="40" id="5oV-El-d2Z"/>
                             <constraint firstItem="Nrb-QX-zV6" firstAttribute="top" secondItem="dsf-4s-CKB" secondAttribute="top" id="CvI-f1-Qms"/>
+                            <constraint firstItem="2g5-Pe-b4k" firstAttribute="width" secondItem="dsf-4s-CKB" secondAttribute="width" multiplier="0.5" id="DLn-zG-XXh"/>
                             <constraint firstAttribute="trailing" secondItem="V3h-D5-y3B" secondAttribute="trailing" id="IRt-fO-jb8"/>
-                            <constraint firstItem="V3h-D5-y3B" firstAttribute="top" secondItem="2g5-Pe-b4k" secondAttribute="bottom" constant="5" id="JE6-xo-XJ0"/>
+                            <constraint firstItem="V3h-D5-y3B" firstAttribute="top" secondItem="2g5-Pe-b4k" secondAttribute="bottom" constant="14" id="JE6-xo-XJ0"/>
                             <constraint firstItem="LO4-76-Fot" firstAttribute="trailing" secondItem="0Cy-6c-HlN" secondAttribute="trailing" constant="30" id="L7S-nb-JBb"/>
+                            <constraint firstItem="2g5-Pe-b4k" firstAttribute="centerY" secondItem="dsf-4s-CKB" secondAttribute="centerY" multiplier="0.23" id="OtR-VU-cHF"/>
                             <constraint firstItem="V3h-D5-y3B" firstAttribute="bottom" secondItem="LO4-76-Fot" secondAttribute="bottom" id="TIj-ra-9oJ"/>
                             <constraint firstItem="2g5-Pe-b4k" firstAttribute="centerX" secondItem="dsf-4s-CKB" secondAttribute="centerX" id="dOF-BY-z0W"/>
                             <constraint firstItem="Nrb-QX-zV6" firstAttribute="bottom" secondItem="dsf-4s-CKB" secondAttribute="bottom" id="iDt-La-OFZ"/>

@@ -18,7 +18,7 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     var interactor: BonusBusinessLogic?
     var router: BonusRoutingLogic?
     var loginRespose: Register.Login.ViewModel.DisplayedData?
-    var consecutiveRoundCount: Int!
+    var consecutiveRoundCount: Int = 0
     var roundStrikeList = [Int]()
     var loadingView: LoadingView?
 
@@ -52,11 +52,7 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     
     // MARK: Configuration
     private func configure() {
-        self.roundCountLabel.text = "You have consecutively played : \(loginRespose?.consecutiveRoundCount ?? 0) rounds"
         consecutiveRoundCount = loginRespose?.consecutiveRoundCount ?? 0
-        self.roundStrikeTable.stickyHeader.view = headerView
-        self.roundStrikeTable.stickyHeader.height = 223
-        self.roundStrikeTable.stickyHeader.minimumHeight = 0
     }
     
     // MARK: View lifecycle
@@ -134,6 +130,19 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
         }
     }
     
+    private func setUpHeaderCell(cell: HeaderCell) {
+        self.setConsequtiveRounds(cell: cell)
+    }
+    
+    private func setConsequtiveRounds(cell: HeaderCell) {
+        let text = "You have consecutively played : \(consecutiveRoundCount) rounds"
+        let range = (text as NSString).range(of: String(consecutiveRoundCount))
+        let attribute = NSMutableAttributedString.init(string: text)
+        attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 232.0/250.0, green: 200/250.0, blue: 0/250.0, alpha: 1.0) , range:range)
+        attribute.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 20.0), range: range)
+        cell.consecutiveRoundLabel.attributedText = attribute
+    }
+    
     //MARK: Loader
     private func addActivityIndicator() {
         loadingView = LoadingView(frame:(self.view.bounds))
@@ -181,22 +190,43 @@ extension BonusViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return roundStrikeList.count;
+        if section == 0 {
+            return 1
+        } else {
+            return roundStrikeList.count
+        }
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+     
+        if indexPath.section == 1 {
         let cell:BonusCell = (tableView.dequeueReusableCell(withIdentifier: BonusCell.getCellIdentifier()) as! BonusCell?)!
         self.setUpCell(cell: cell, indexPath: indexPath)
-        return cell
+            return cell
+        } else {
+            
+            let cell:HeaderCell = (tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! HeaderCell?)!
+            self.setUpHeaderCell(cell: cell)
+            return cell
+        }
+            
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
 }
 
 //MARK:UITableViewDelegate
 extension BonusViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 1 {
         return self.view.frame.size.width * 0.25;
+        } else {
+            return 235
+        }
     }
 }
