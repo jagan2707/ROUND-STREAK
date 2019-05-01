@@ -35,6 +35,8 @@
 		BFBB9C3D2279C6A900FAB081 /* RegisterPresentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB9C3C2279C6A900FAB081 /* RegisterPresentTest.swift */; };
 		BFBB9C402279CD5900FAB081 /* BonusInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB9C3F2279CD5900FAB081 /* BonusInteractorTest.swift */; };
 		BFBB9C422279CD7900FAB081 /* BonusPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB9C412279CD7900FAB081 /* BonusPresenterTest.swift */; };
+		BFBB9C452279F5B900FAB081 /* SecondScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BFBB9C432279F5B600FAB081 /* SecondScreen.png */; };
+		BFBB9C462279F5B900FAB081 /* FirstSreen.png in Resources */ = {isa = PBXBuildFile; fileRef = BFBB9C442279F5B600FAB081 /* FirstSreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		BFBB9C3C2279C6A900FAB081 /* RegisterPresentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresentTest.swift; sourceTree = "<group>"; };
 		BFBB9C3F2279CD5900FAB081 /* BonusInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusInteractorTest.swift; sourceTree = "<group>"; };
 		BFBB9C412279CD7900FAB081 /* BonusPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusPresenterTest.swift; sourceTree = "<group>"; };
+		BFBB9C432279F5B600FAB081 /* SecondScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SecondScreen.png; sourceTree = "<group>"; };
+		BFBB9C442279F5B600FAB081 /* FirstSreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FirstSreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 		BF887A5E22740259001AB198 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BFBB9C442279F5B600FAB081 /* FirstSreen.png */,
+				BFBB9C432279F5B600FAB081 /* SecondScreen.png */,
 				BF887A262273F71B001AB198 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -406,8 +412,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF887A2A2273F71B001AB198 /* LaunchScreen.storyboard in Resources */,
+				BFBB9C462279F5B900FAB081 /* FirstSreen.png in Resources */,
 				BF887A272273F71B001AB198 /* Assets.xcassets in Resources */,
 				BF887A252273F719001AB198 /* Main.storyboard in Resources */,
+				BFBB9C452279F5B900FAB081 /* SecondScreen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
