@@ -18,7 +18,6 @@ class RegisterRouter: NSObject, RegisterRoutingLogic {
     weak var viewController: RegisterViewController?
     
     // MARK: Routing
-    
     func routeToBonusScreen(loginModel: Register.Login.ViewModel.DisplayedData)
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

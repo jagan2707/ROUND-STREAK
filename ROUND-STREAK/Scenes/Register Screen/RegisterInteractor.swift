@@ -15,24 +15,18 @@ protocol RegisterBusinessLogic {
 class RegisterInteractor: RegisterBusinessLogic {
     var presenter: RegisterPresentationLogic?
     lazy var worker = RegisterWorker()
+   
+    //MARK: Login
     
-    // MARK: Validation
-
-
     func loginWithData(request: Register.Login.Request) {
-        
         if !isValidEmailAddress(emailAddressString: request.email) {
-            
             presenter?.presentAlert(alert: Register.LoginFailure(alertString : "Please enter a valid email address."))
             
         } else if !isValidPassword(passwordString: request.password) {
-            
             presenter?.presentAlert(alert: Register.LoginFailure(alertString : "Please enter valid password"))
             
         } else {
-            
             worker.loginWithData(request: request, onSuccess: { loginModel in
-                
                 let responce = Register.Login.Response(results: loginModel)
                 self.presenter?.updateLoginResponse(response: responce)
             }) { loginFailure in
@@ -42,11 +36,11 @@ class RegisterInteractor: RegisterBusinessLogic {
         }
     }
     
+    // MARK: Validation
+    
    private func isValidEmailAddress(emailAddressString: String) -> Bool {
-        
         var returnValue = true
         let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
-        
         do {
             let regex = try NSRegularExpression(pattern: emailRegEx)
             let nsString = emailAddressString as NSString
@@ -66,7 +60,6 @@ class RegisterInteractor: RegisterBusinessLogic {
     }
     
    private func isValidPassword(passwordString: String) -> Bool {
-        
         if passwordString.count > 2 {
             return true
         } else {

@@ -21,7 +21,6 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     var consecutiveRoundCount: Int = 0
     var roundStrikeList = [Int]()
     var loadingView: LoadingView?
-
     @IBOutlet weak var roundStrikeTable: UITableView!
     @IBOutlet weak var roundCountLabel: UILabel!
     @IBOutlet weak var headerView: UIView!

@@ -17,7 +17,6 @@ class BonusRouter: NSObject, BonusRoutingLogic {
     weak var viewController: BonusViewController?
     
     // MARK: Routing
-    
     func getBackToLogin() {
         self.viewController?.dismiss(animated: true, completion: nil)
     }

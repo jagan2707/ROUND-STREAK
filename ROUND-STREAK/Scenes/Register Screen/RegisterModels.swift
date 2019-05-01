@@ -12,7 +12,6 @@ enum Register {
     // MARK: Use cases
     
     enum Login {
-        
         struct Request {
             var email: String
             var password: String
@@ -32,6 +31,7 @@ enum Register {
             var displayedData: DisplayedData
         }
     }
+    
     struct LoginFailure
     {
       var alertString: String

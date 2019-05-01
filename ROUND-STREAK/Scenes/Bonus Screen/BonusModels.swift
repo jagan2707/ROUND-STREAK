@@ -12,10 +12,10 @@ enum Bonus {
     // MARK: Use cases
     
     enum RoundStreak {
-        
         struct Request {
         var accessToken: String
         }
+        
         struct Response {
             var results : [Int]
         }

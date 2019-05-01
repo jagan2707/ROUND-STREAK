@@ -23,12 +23,9 @@ class RegisterPresenter: RegisterPresentationLogic {
     }
     
     func updateLoginResponse(response: Register.Login.Response) {
-        
         let consecutiveRoundCount = response.results.consecutiveRoundCount
         let accessToken = response.results.accessToken
-        
         let displayedData = Register.Login.ViewModel.DisplayedData(consecutiveRoundCount: consecutiveRoundCount, accessToken: accessToken)
-        
         let viewModel = Register.Login.ViewModel(displayedData: displayedData)
         viewController?.LoginSuccessWithModel(viewModel: viewModel)
     }

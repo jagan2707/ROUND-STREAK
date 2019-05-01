@@ -9,6 +9,7 @@
 import UIKit
 
 class BonusWorker {
+    
     func getListOfRoundsWith(request: Bonus.RoundStreak.Request, onSuccess success: @escaping (_ result: [Int]) -> Void, onFailure failure: @escaping (_ roundStreakFailure: Bonus.RoundStreakFailure) -> Void) {
         let urlString = "https://api.panya.me/v2/test/streak-bonus"
         guard let url = URL(string: urlString) else {

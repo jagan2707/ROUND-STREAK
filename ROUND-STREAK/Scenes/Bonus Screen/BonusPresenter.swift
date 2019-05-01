@@ -15,17 +15,14 @@ protocol BonusPresentationLogic {
 
 class BonusPresenter: BonusPresentationLogic {
     weak var viewController: BonusDisplayLogic?
-    
+
     // MARK: Presentation logic
-    
      func presentRoundStreak(response: Bonus.RoundStreak.Response) {
-       
         let viewModel = Bonus.RoundStreak.ViewModel(content: response.results)
         viewController?.displayListOfRoundStreak(viewModel: viewModel)
     }
     
     func presentAlert(alert : Bonus.RoundStreakFailure)  {
-        
         viewController?.displayAlert(dataFailure: alert)
     }
 }
