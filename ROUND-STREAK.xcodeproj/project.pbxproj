@@ -221,9 +221,8 @@
 		BF887A5E22740259001AB198 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				BFBB9C442279F5B600FAB081 /* FirstSreen.png */,
-				BFBB9C432279F5B600FAB081 /* SecondScreen.png */,
 				BF887A262273F71B001AB198 /* Assets.xcassets */,
+				BFBB9C472279F8CF00FAB081 /* Github Referense ScreenShots */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -305,6 +304,15 @@
 				BFBB9C412279CD7900FAB081 /* BonusPresenterTest.swift */,
 			);
 			path = BonusTest;
+			sourceTree = "<group>";
+		};
+		BFBB9C472279F8CF00FAB081 /* Github Referense ScreenShots */ = {
+			isa = PBXGroup;
+			children = (
+				BFBB9C442279F5B600FAB081 /* FirstSreen.png */,
+				BFBB9C432279F5B600FAB081 /* SecondScreen.png */,
+			);
+			path = "Github Referense ScreenShots";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
