@@ -1,5 +1,5 @@
 
-# I have used MVP architecture design pattern
+# I have used Clean Swift architecture design pattern
 
 UI Design showcase
 ------------------
