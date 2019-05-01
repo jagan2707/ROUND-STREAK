@@ -1,10 +1,6 @@
 
 # I have used MVP architecture design pattern
 
-Libraries I have used for the assignment
-----------------------------------------
-* Reachabilty
-
 UI Design showcase
 ------------------
 
