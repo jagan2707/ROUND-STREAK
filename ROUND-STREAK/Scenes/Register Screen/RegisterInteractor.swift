@@ -14,7 +14,7 @@ protocol RegisterBusinessLogic {
 
 class RegisterInteractor: RegisterBusinessLogic {
     var presenter: RegisterPresentationLogic?
-    fileprivate lazy var worker = RegisterWorker()
+    lazy var worker = RegisterWorker()
     
     // MARK: Validation
 

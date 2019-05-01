@@ -14,7 +14,7 @@ protocol BonusBusinessLogic {
 
 class BonusInteractor: BonusBusinessLogic {
     var presenter: BonusPresentationLogic?
-    fileprivate lazy var worker = BonusWorker()
+    lazy var worker = BonusWorker()
     
     // MARK: Business logic
     
