@@ -84,12 +84,10 @@ class BonusViewController: UIViewController, BonusDisplayLogic {
     
    private func setUpCell(cell: BonusCell, indexPath: IndexPath) {
         let additionValue = (indexPath.row * 5)
-        let numLabelArray = [cell.numFirst,cell.numSecond,cell.numThird,cell.numFour,cell.numFive]
         var blockValue = 1
-        for (index, label) in numLabelArray.enumerated() {
+        for index in 0...4 {
             let indexNum = index+1
             blockValue = additionValue + indexNum
-            label?.text = "\(blockValue)"
             let imgView = cell.contentView.viewWithTag(100+index) as! UIImageView
             let numberLabel = cell.contentView.viewWithTag(200+index) as! UILabel
             if blockValue <= consecutiveRoundCount {
